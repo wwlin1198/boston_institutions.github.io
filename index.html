@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<meta charset="utf-8">
+<title>Research Insitutions</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<style>
+    .marker {
+        display: block;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        padding: 0;
+    }
+</style>
+
+<div id="map"></div>
+
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1Ijoid3dsaW4xMTk4IiwiYSI6ImNsY2NmYWU1bTQ3c2Qzb21uNXFmcXY1cWQifQ.eUjofiDLcKAvZM6hMmQtng';
+    const geojson = {
+        'type': 'FeatureCollection',
+        'features': [
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Microsoft New England Research and Development Center',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.08125263323923,42.36149765440268]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Amazon Robotics ',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.13213145767187,42.555551032619974]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Boston Dynamics',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.25429572883627,42.41837683186944]
+                }
+            }
+            ,
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'iRobot',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.25429572883627,42.41837683186944]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Perceptive Automata, Inc.',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.0581924999999,42.35850490084363]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Arrow Electrionics',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.24282927116447,42.514384745032714]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Draper',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.0581924999999,42.35850490084363]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Aurora Flight Science',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-70.96309927116309,42.52060683703965]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Raytheon',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.0910192711652,42.36469890193851]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Raytheon BBN',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.06635927116334,42.3772368297914]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Anduril',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.25429572883627,42.41837683186944]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'STR',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.14753072883676,42.38975683042344]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'SCCI',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.09979499999949,42.345559757830074]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'MITRE',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.12585000000101,42.494864746515645]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'IBM',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.12739999999992,42.49569892510769]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Facebook',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.23734927116351,42.50455892667753]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Google',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.08668072883711,42.3620830463764]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'NVIDIA',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.57294184465994,42.28083448441046]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'NVIDIA',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.08724154232824,42.362720974119185]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'AMD',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.41329927116442,42.571231037385814]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Novartis Institutes for Biomedical Research',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.47971593454092,42.4999348381242045]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Mitsubishi Electric Research Laboratories',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.09251265690752,42.366077413352116]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Boston College',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.19257845767238,42.34364075797683]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Brandeis University',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.2591082711637,42.3660748292277]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Clark University',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.82322749531384,42.25110851790629]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Harvard University',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.12315954232838,42.37604182973155]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Massachusetts Institute of Technology',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.10003912590949,42.3568782298976]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Northeastern University',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.08833404232685,42.339740258270496]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Suffolk University',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.06208449999966,42.358857972949835]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Tufts University',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.12083872021661,42.40633422265216]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'University of Massachusetts Amherst',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-72.52741267717072,42.38886697758818]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'University of Massachusetts Boston',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.03915303239035,42.31358725597491]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'University of Massachusetts Dartmouth',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.00624886607932,41.62883072419655]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'University of Massachusetts Lowell',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.33412338602378,42.64269297018993]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Worcester Polytechnic Institute',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.80853058407023,42.27407005002527]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Wentworth Institute of Technology',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.0952548870634,42.33649736583905]
+                }
+            }
+
+        ]
+    };
+
+    const geojson2 = {
+        'type': 'FeatureCollection',
+        'features2': [
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Boston College',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.19257845767238,42.34364075797683]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Brandeis University',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.2591082711637,42.3660748292277]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Clark University',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.82322749531384,42.25110851790629]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Harvard University',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.12315954232838,42.37604182973155]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Massachusetts Institute of Technology',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.10003912590949,42.3568782298976]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Northeastern University',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.08833404232685,42.339740258270496]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Suffolk University',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.06208449999966,42.358857972949835]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Tufts University',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.12083872021661,42.40633422265216]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'University of Massachusetts Amherst',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-72.52741267717072,42.38886697758818]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'University of Massachusetts Boston',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.03915303239035,42.31358725597491]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'University of Massachusetts Dartmouth',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.00624886607932,41.62883072419655]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'University of Massachusetts Lowell',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.33412338602378,42.64269297018993]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Worcester Polytechnic Institute',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.80853058407023,42.27407005002527]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Wentworth Institute of Technology',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.0952548870634,42.33649736583905]
+                }
+            }
+
+        ]
+    };
+
+    
+
+
+
+
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/dark-v10',
+        center: [-72.063392662594,42.3230910495615],
+        zoom: 8
+    });
+
+
+
+    // Add markers to the map.
+    for (const marker of geojson.features) {
+        const el = document.createElement('div');
+        const width = marker.properties.iconSize[0];
+        const height = marker.properties.iconSize[1];
+        el.className = 'marker';
+        el.style.backgroundImage = `url(institution.png)`;
+        el.style.width = `${width}px`;
+        el.style.height = `${height}px`;
+        el.style.backgroundSize = '100%';
+
+        el.addEventListener('click', () => {
+            window.alert(marker.properties.message);
+        });
+
+        // Add markers to the map.
+        new mapboxgl.Marker(el)
+            .setLngLat(marker.geometry.coordinates)
+            .addTo(map);
+    }
+
+    for (const marker of geojson2.features2) {
+        const el = document.createElement('div');
+        const width = marker.properties.iconSize[0];
+        const height = marker.properties.iconSize[1];
+        el.className = 'marker';
+        el.style.backgroundImage = `url(school.png)`;
+        el.style.width = `${width}px`;
+        el.style.height = `${height}px`;
+        el.style.backgroundSize = '100%';
+
+        el.addEventListener('click', () => {
+            window.alert(marker.properties.message);
+        });
+
+        // Add markers to the map.
+        new mapboxgl.Marker(el)
+            .setLngLat(marker.geometry.coordinates)
+            .addTo(map);
+    }
+
+
+</script>
+
+</body>
+</html>
