@@ -20,10 +20,6 @@ body { margin: 0; padding: 0; }
         cursor: pointer;
         padding: 0;
     }
-    .mapboxgl-popup {
-        max-width: 400px;
-        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-    }
 </style>
 
 <div id="map"></div>
@@ -36,41 +32,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'description': 'Microsoft New England Research and Development Center',
-                    'iconSize': [40, 40]
-                },
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-71.08125263323923,42.36149765440268]
-                }
-            },
-            {
-                'type': 'Feature',
-                'properties': {
-                    'description': 'Amazon Robotics ',
-                    'iconSize': [40, 40]
-                },
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-71.13213145767187,42.555551032619974]
-                }
-            },
-            {
-                'type': 'Feature',
-                'properties': {
                     'description': 'Boston Dynamics',
-                    'iconSize': [40, 40]
-                },
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-71.25429572883627,42.41837683186944]
-                }
-            }
-            ,
-            {
-                'type': 'Feature',
-                'properties': {
-                    'description': 'iRobot',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -188,39 +150,6 @@ body { margin: 0; padding: 0; }
                     'type': 'Point',
                     'coordinates': [          -71.2373669258847,
           42.50458402311543]
-                }
-            },
-            {
-                'type': 'Feature',
-                'properties': {
-                    'description': 'IBM',
-                    'iconSize': [40, 40]
-                },
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-71.12739999999992,42.49569892510769]
-                }
-            },
-            {
-                'type': 'Feature',
-                'properties': {
-                    'description': 'Facebook',
-                    'iconSize': [40, 40]
-                },
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-71.23734927116351,42.50455892667753]
-                }
-            },
-            {
-                'type': 'Feature',
-                'properties': {
-                    'description': 'Google',
-                    'iconSize': [40, 40]
-                },
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-71.08668072883711,42.3620830463764]
                 }
             },
             {
@@ -688,17 +617,6 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'description': 'Suffolk University',
-                    'iconSize': [40, 40]
-                },
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-71.06208449999966,42.358857972949835]
-                }
-            },
-            {
-                'type': 'Feature',
-                'properties': {
                     'description': 'Tufts University',
                     'iconSize': [40, 40]
                 },
@@ -776,11 +694,77 @@ body { margin: 0; padding: 0; }
 
         ]
     };
-
-    
-
-
-
+    const geojson3 = {
+        'type': 'FeatureCollection',
+        'features3': [
+            {
+                'type': 'Feature',
+                'properties': {
+                    'description': 'Microsoft New England Research and Development Center',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.08125263323923,42.36149765440268]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'description': 'Amazon Robotics ',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.13213145767187,42.555551032619974]
+                }
+            },            
+            {
+                'type': 'Feature',
+                'properties': {
+                    'description': 'iRobot',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.25429572883627,42.41837683186944]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'description': 'IBM',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.12739999999992,42.49569892510769]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'description': 'Meta',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.23734927116351,42.50455892667753]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'description': 'Google',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.08668072883711,42.3620830463764]
+                }
+            },
+        ]
+    };
 
     const map = new mapboxgl.Map({
         container: 'map',
@@ -831,10 +815,27 @@ body { margin: 0; padding: 0; }
             .setLngLat(marker.geometry.coordinates)
             .addTo(map);
     }
-    const popup = new mapboxgl.Popup({
-    closeButton: false,
-    closeOnClick: false
-    });
+
+    
+    for (const marker of geojson3.features3) {
+        const el = document.createElement('div');
+        const width = marker.properties.iconSize[0];
+        const height = marker.properties.iconSize[1];
+        el.className = 'marker';
+        el.style.backgroundImage = `url(bigtech.png)`;
+        el.style.width = `${width}px`;
+        el.style.height = `${height}px`;
+        el.style.backgroundSize = '100%';
+
+        el.addEventListener('click', () => {
+            window.alert(marker.properties.description);
+        });
+
+        // Add markers to the map.
+        new mapboxgl.Marker(el)
+            .setLngLat(marker.geometry.coordinates)
+            .addTo(map);
+    }
 
 
 </script>
