@@ -20,6 +20,10 @@ body { margin: 0; padding: 0; }
         cursor: pointer;
         padding: 0;
     }
+    .mapboxgl-popup {
+        max-width: 400px;
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    }
 </style>
 
 <div id="map"></div>
@@ -32,7 +36,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Microsoft New England Research and Development Center',
+                    'description': 'Microsoft New England Research and Development Center',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -43,7 +47,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Amazon Robotics ',
+                    'description': 'Amazon Robotics ',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -54,7 +58,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Boston Dynamics',
+                    'description': 'Boston Dynamics',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -66,7 +70,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'iRobot',
+                    'description': 'iRobot',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -77,7 +81,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Perceptive Automata, Inc.',
+                    'description': 'Perceptive Automata, Inc.',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -88,7 +92,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Arrow Electrionics',
+                    'description': 'Arrow Electrionics',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -99,7 +103,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Draper',
+                    'description': 'Draper',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -110,7 +114,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Aurora Flight Science',
+                    'description': 'Aurora Flight Science',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -121,7 +125,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Raytheon',
+                    'description': 'Raytheon',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -132,7 +136,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Raytheon BBN',
+                    'description': 'Raytheon BBN',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -143,7 +147,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Anduril',
+                    'description': 'Anduril',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -154,7 +158,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'STR',
+                    'description': 'STR',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -165,29 +169,31 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'SCCI',
+                    'description': 'SCCI',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
                     'type': 'Point',
-                    'coordinates': [-71.09979499999949,42.345559757830074]
+                    'coordinates': [          -71.1286791562302,
+          42.495366287289784]
                 }
             },
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'MITRE',
+                    'description': 'MITRE',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
                     'type': 'Point',
-                    'coordinates': [-71.12585000000101,42.494864746515645]
+                    'coordinates': [          -71.2373669258847,
+          42.50458402311543]
                 }
             },
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'IBM',
+                    'description': 'IBM',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -198,7 +204,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Facebook',
+                    'description': 'Facebook',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -209,7 +215,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Google',
+                    'description': 'Google',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -220,7 +226,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'NVIDIA',
+                    'description': 'NVIDIA',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -231,7 +237,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'NVIDIA',
+                    'description': 'NVIDIA',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -242,7 +248,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'AMD',
+                    'description': 'AMD',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -253,7 +259,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Novartis Institutes for Biomedical Research',
+                    'description': 'Novartis Institutes for Biomedical Research',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -264,7 +270,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Mitsubishi Electric Research Laboratories',
+                    'description': 'Mitsubishi Electric Research Laboratories',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -275,7 +281,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Motional',
+                    'description': 'Motional',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -286,7 +292,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Nuance',
+                    'description': 'Nuance',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -297,7 +303,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Boston Scientific',
+                    'description': 'Boston Scientific',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -308,7 +314,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Path AI ',
+                    'description': 'Path AI ',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -320,7 +326,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': '3Play Media',
+                    'description': '3Play Media',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -332,7 +338,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Hi Marley',
+                    'description': 'Hi Marley',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -344,7 +350,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Tufin',
+                    'description': 'Tufin',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -356,7 +362,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Mainstay',
+                    'description': 'Mainstay',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -368,7 +374,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Kensho Technologies',
+                    'description': 'Kensho Technologies',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -380,7 +386,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Dynatrace',
+                    'description': 'Dynatrace',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -392,7 +398,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Gradient AI',
+                    'description': 'Gradient AI',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -404,7 +410,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Evolv Technology',
+                    'description': 'Evolv Technology',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -416,7 +422,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Tamr',
+                    'description': 'Tamr',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -429,7 +435,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Beacon Biosignals',
+                    'description': 'Beacon Biosignals',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -441,7 +447,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'mabl',
+                    'description': 'mabl',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -453,7 +459,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'American Robotics',
+                    'description': 'American Robotics',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -465,7 +471,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'True Fit',
+                    'description': 'True Fit',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -477,7 +483,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Accer8 Talent',
+                    'description': 'Accer8 Talent',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -489,7 +495,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'SFL Scientific',
+                    'description': 'SFL Scientific',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -501,7 +507,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'TraceLink',
+                    'description': 'TraceLink',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -513,7 +519,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Teikametrics',
+                    'description': 'Teikametrics',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -525,7 +531,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Bensen AI',
+                    'description': 'Bensen AI',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -537,7 +543,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Carbonado',
+                    'description': 'Carbonado',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -549,7 +555,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Cangrade',
+                    'description': 'Cangrade',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -561,7 +567,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Tessian',
+                    'description': 'Tessian',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -573,7 +579,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Data Robot ',
+                    'description': 'Data Robot ',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -585,13 +591,24 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Indico Data',
+                    'description': 'Indico Data',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
                     'type': 'Point',
                     'coordinates': [          -71.06219062698385,
           42.36451390190646]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'description': 'MIT Lincoln Lab',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-71.26669166732924, 42.45917450001258]
                 }
             },
             
@@ -605,7 +622,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Boston College',
+                    'description': 'Boston College',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -616,7 +633,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Brandeis University',
+                    'description': 'Brandeis University',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -627,7 +644,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Clark University',
+                    'description': 'Clark University',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -638,7 +655,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Harvard University',
+                    'description': 'Harvard University',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -649,7 +666,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Massachusetts Institute of Technology',
+                    'description': 'Massachusetts Institute of Technology',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -660,7 +677,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Northeastern University',
+                    'description': 'Northeastern University',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -671,7 +688,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Suffolk University',
+                    'description': 'Suffolk University',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -682,7 +699,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Tufts University',
+                    'description': 'Tufts University',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -693,7 +710,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'University of Massachusetts Amherst',
+                    'description': 'University of Massachusetts Amherst',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -704,7 +721,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'University of Massachusetts Boston',
+                    'description': 'University of Massachusetts Boston',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -715,7 +732,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'University of Massachusetts Dartmouth',
+                    'description': 'University of Massachusetts Dartmouth',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -726,7 +743,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'University of Massachusetts Lowell',
+                    'description': 'University of Massachusetts Lowell',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -737,7 +754,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Worcester Polytechnic Institute',
+                    'description': 'Worcester Polytechnic Institute',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -748,7 +765,7 @@ body { margin: 0; padding: 0; }
             {
                 'type': 'Feature',
                 'properties': {
-                    'message': 'Wentworth Institute of Technology',
+                    'description': 'Wentworth Institute of Technology',
                     'iconSize': [40, 40]
                 },
                 'geometry': {
@@ -786,7 +803,7 @@ body { margin: 0; padding: 0; }
         el.style.backgroundSize = '100%';
 
         el.addEventListener('click', () => {
-            window.alert(marker.properties.message);
+            window.alert(marker.properties.description);
         });
 
         // Add markers to the map.
@@ -806,7 +823,7 @@ body { margin: 0; padding: 0; }
         el.style.backgroundSize = '100%';
 
         el.addEventListener('click', () => {
-            window.alert(marker.properties.message);
+            window.alert(marker.properties.description);
         });
 
         // Add markers to the map.
@@ -814,6 +831,10 @@ body { margin: 0; padding: 0; }
             .setLngLat(marker.geometry.coordinates)
             .addTo(map);
     }
+    const popup = new mapboxgl.Popup({
+    closeButton: false,
+    closeOnClick: false
+    });
 
 
 </script>
