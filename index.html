@@ -19,7 +19,17 @@ body { margin: 0; padding: 0; }
         border-radius: 50%;
         cursor: pointer;
         padding: 0;
+        
     }
+    .mapboxgl-popup {
+        max-width: 200px;
+    }
+
+    .mapboxgl-popup-content {
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+    }
+
 </style>
 
 <div id="map"></div>
@@ -775,6 +785,7 @@ body { margin: 0; padding: 0; }
 
 
 
+
     // Add markers to the map.
     for (const marker of geojson.features) {
         const el = document.createElement('div');
@@ -786,14 +797,20 @@ body { margin: 0; padding: 0; }
         el.style.height = `${height}px`;
         el.style.backgroundSize = '100%';
 
-        el.addEventListener('click', () => {
-            window.alert(marker.properties.description);
-        });
+        // el.addEventListener('click', () => {
+        //     window.alert(marker.properties.description);
+        // });
 
         // Add markers to the map.
         new mapboxgl.Marker(el)
-            .setLngLat(marker.geometry.coordinates)
-            .addTo(map);
+          .setLngLat(marker.geometry.coordinates)
+          .setPopup(
+            new mapboxgl.Popup({ offset: 25 }) // add popups
+              .setHTML(
+                `<h3>${marker.properties.description}</h3></p>`
+              )
+          )
+        .addTo(map);
     }
 
     for (const marker of geojson2.features2) {
@@ -806,15 +823,22 @@ body { margin: 0; padding: 0; }
         el.style.height = `${height}px`;
         el.style.backgroundSize = '100%';
 
-        el.addEventListener('click', () => {
-            window.alert(marker.properties.description);
-        });
+        // el.addEventListener('mouseenter', () => {
+        //     window.alert(marker.properties.description);
+        // });
 
         // Add markers to the map.
         new mapboxgl.Marker(el)
             .setLngLat(marker.geometry.coordinates)
+            .setPopup(
+            new mapboxgl.Popup({ offset: 25 }) // add popups
+              .setHTML(
+                `<h3>${marker.properties.description}</h3></p>`
+              )
+            )
             .addTo(map);
     }
+
 
     
     for (const marker of geojson3.features3) {
@@ -827,14 +851,20 @@ body { margin: 0; padding: 0; }
         el.style.height = `${height}px`;
         el.style.backgroundSize = '100%';
 
-        el.addEventListener('click', () => {
-            window.alert(marker.properties.description);
-        });
+        // el.addEventListener('mouseenter', () => {
+        //     window.alert(marker.properties.description);
+        // });
 
         // Add markers to the map.
         new mapboxgl.Marker(el)
             .setLngLat(marker.geometry.coordinates)
-            .addTo(map);
+            .setPopup(
+            new mapboxgl.Popup({ offset: 25 }) // add popups
+              .setHTML(
+                `<h3>${marker.properties.description}</h3></p>`
+              )
+            )
+            .addTo(map)
     }
 
 
